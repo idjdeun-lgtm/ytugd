@@ -804,9 +804,9 @@ local function ChangeTheme(Theme)
 		Main.Notice.BackgroundColor3 = SelectedTheme.Background
 	end
 
-	for _, text in ipairs(Rayfield:GetDescendants()) do
-		if text.Parent.Parent ~= Notifications then
-			if text:IsA('TextLabel') or text:IsA('TextBox') then text.TextColor3 = SelectedTheme.TextColor end
+	for _, text in ipairs(Main:GetDescendants()) do -- Only scan inside the Main frame
+		if text:IsA('TextLabel') or text:IsA('TextBox') then 
+			text.TextColor3 = SelectedTheme.TextColor 
 		end
 	end
 
